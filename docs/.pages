@@ -1,8 +1,8 @@
 nav:
-  - ISE Engineering Fundamentals Playbook: README.md
+  - ESF Engineering Engineering Fundamentals Playbook: README.md
   - Engineering Fundamentals Checklist: engineering-fundamentals-checklist.md
-  - The First Week of an ISE Project: the-first-week-of-an-ise-project.md
-  - Who is ISE?: ISE.md
+  - Week One of a Project: week-one-of-a-project.md
+  - Who is ESF Engineering?: ESF Engineering.md
   - Agile Development: agile-development
   - Automated Testing: automated-testing
   - CI/CD: CI-CD
