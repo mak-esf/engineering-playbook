@@ -1,6 +1,6 @@
-# ISE Engineering Fundamentals Playbook
+# ESF Engineering Engineering Playbook
 
-An engineer working for a [ISE](ISE.md) project...
+An engineer working in [ESF Engineering](ESF-engineering.md) project...
 
 * Has responsibilities to their team – mentor, coach, and lead.
 * Knows their **playbook**. Follows their playbook. Fixes their playbook if it is broken. If they find a better playbook, they copy it. If somebody could use their playbook, they share it.
@@ -17,7 +17,7 @@ This is our playbook. All contributions are welcome! Please feel free to submit 
 
 If you do nothing else follow the [Engineering Fundamentals Checklist](./engineering-fundamentals-checklist.md)!
 
-The [first week of an ISE project](./the-first-week-of-an-ise-project.md) is a breakdown of the sections of the playbook according to the structure of an Agile sprint.
+The [week One of an ESF Engineering project](./week-one-of-an-ESF-engineering-project.md) is a breakdown of the sections of the playbook according to the structure of an Agile sprint.
 
 ## General Guidance
 
@@ -31,7 +31,3 @@ The [first week of an ISE project](./the-first-week-of-an-ise-project.md) is a b
 * Keep backlog item details up to date to communicate the state of things with the rest of your team.
 * Report product issues found and provide clear and repeatable engineering feedback!
 * We all own our code and each one of us has an obligation to make all parts of the solution great.
-
-## Contributing
-
-See [CONTRIBUTING.md](https://github.com/microsoft/code-with-engineering-playbook/tree/master/CONTRIBUTING.md) for contribution guidelines.
