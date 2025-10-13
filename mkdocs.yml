@@ -1,10 +1,10 @@
 ---
-site_name: Engineering Fundamentals Playbook
-site_url: https://microsoft.github.io/code-with-engineering-playbook
-site_description: ISE Engineering Fundamentals Engineering Playbook
-site_author: Microsoft ISE
+site_name: ESF Engineering Playbook
+site_url: https://esf.github.io/engineering-playbook
+site_description: ESF Engineering Playbook
+site_author: ESF
 
-repo_url: https://github.com/microsoft/code-with-engineering-playbook/
+repo_url: https://github.com/esf/engineering-playbook/
 edit_uri: ""
 
 theme:
