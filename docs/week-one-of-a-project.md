@@ -1,4 +1,4 @@
-# Week ONE of an ESF Engineering Project
+# Week One of a Project
 
 The purpose of this document is to:
 
@@ -16,7 +16,7 @@ The purpose of this document is to:
   - [Estimation](agile-development/ceremonies.md#estimation)
 - [ ] [Set up the repository/repositories](source-control/README.md#creating-a-new-repository)
   - Decide on repository structure/s
-  - Add README.md, LICENSE, CONTRIBUTING.md, .gitignore, etc
+  - Add README.md, LICENSE, .gitignore, etc
 - [ ] [Build a Product Backlog](agile-development/advanced-topics/backlog-management)
   - Set up a project in your chosen project management tool (ex. Azure DevOps)
   - [INVEST](https://en.wikipedia.org/wiki/INVEST_(mnemonic)) in good User Stories and Acceptance Criteria
@@ -50,7 +50,7 @@ The purpose of this document is to:
 
 - [ ] [Agree on code style](code-reviews/README.md) and on [how to assign Pull Requests](code-reviews/pull-requests.md)
 - [ ] [Set up Build Validation for Pull Requests (2 reviewers, linters, automated tests)](code-reviews/README.md) and agree on [Definition of Done](agile-development/team-agreements/definition-of-done.md)
-- [ ] [Agree on a Code Merging strategy](source-control/merge-strategies.md) and update the CONTRIBUTING.md
+- [ ] [Agree on a Code Merging strategy](source-control/merge-strategies.md)
 - [ ] [Agree on logging and observability frameworks and strategies](observability/README.md)
 
 ## Day 4
