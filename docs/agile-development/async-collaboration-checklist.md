@@ -4,9 +4,9 @@ Purpose: Practical guidance for distributed teams to collaborate effectively and
 
 ## Async standup template
 
-- Summary (yesterday): short bullet(s)
-- Plan (today): short bullet(s)
-- Blockers / help needed: short bullet(s)
+- What did I work on yesterday?: short bullet(s)
+- What do I plan on working on today?: short bullet(s)
+- What issues are blocking me or do I need help with?: short bullet(s)
 
 Post the above in a shared channel or issue and use threaded replies for follow-ups.
 

@@ -27,28 +27,28 @@ The sprint goal can be used:
 
 Example 1: Preparing in advance
 
-- The dev lead and product owner plan time to prepare the sprint backlog ahead of sprint planning.
-- The dev lead uses their experience (past and on the current project) and the estimation made for these stories to gauge how many should be in the sprint.
-- The dev lead asks the entire team to look at the tentative sprint backlog in advance of the sprint planning.
-- The dev lead assigns stories to specific developers after confirming with them that it makes sense
+- The tech lead and product owner plan time to prepare the sprint backlog ahead of sprint planning.
+- The tech lead uses their experience (past and on the current project) and the estimation made for these stories to gauge how many should be in the sprint.
+- The tech lead asks the entire team to look at the tentative sprint backlog in advance of the sprint planning.
+- The tech lead assigns stories to specific developers after confirming with them that it makes sense
 - During the sprint planning meeting, the team reviews the sprint goal and the stories. Everyone confirms they understand the plan and feel it's reasonable.
 
 Example 2: Building during the planning meeting
 
 - The product owner ensures that the highest priority items of the product backlog is refined and estimated following the team estimation process.
 - During the Sprint planning meeting, the product owner describe each stories, one by one, starting by highest priority.
-- For each story, the dev lead and the team confirm they understand what needs to be done and add the story to the sprint backlog.
+- For each story, the tech lead and the team confirm they understand what needs to be done and add the story to the sprint backlog.
 - The team keeps considering more stories up to a point where they agree the sprint backlog is full. This should be informed by the estimation, past developer experience and past experience in this specific project.
 - Stories are assigned during the planning meeting:
-  - **Option 1:** The dev lead makes suggestion on who could work on each stories. Each engineer agrees or discuss if required.
+  - **Option 1:** The tech lead makes suggestion on who could work on each stories. Each engineer agrees or discuss if required.
   - **Option 2:** The team review each story and engineer volunteer select the one they want to be assigned to.
-  > **Note**: this option might cause issues with the first core expectations. Who gets to work on what? Ultimately, it is the dev lead responsibility to ensure each engineer gets the opportunity to work on what makes sense for their growth.)
+  > **Note**: this option might cause issues with the first core expectations. Who gets to work on what? Ultimately, it is the tech lead responsibility to ensure each engineer gets the opportunity to work on what makes sense for their growth.)
 
 ### Tasks
 
 Examples of approaches for task creation and assignment:
 
-- Stories are split into tasks ahead of time by dev lead and assigned before/during sprint planning to engineers.
+- Stories are split into tasks ahead of time by tech lead and assigned before/during sprint planning to engineers.
 - Stories are assigned to more senior engineers who are responsible for splitting into tasks.
 - Stories are split into tasks during the Sprint planning meeting by the entire team.
 
@@ -76,20 +76,20 @@ Rough estimation is usually done using a representative mid-level engineer (for 
 ### Example 1: T-shirt Sizes
 
 - The team use t-shirt sizes (S, M, L, XL) and agrees in advance which size fits a sprint. In this example: S, M fits a sprint, L, XL too big for a sprint and need to be split / refined
-- The dev lead with support of the team roughly estimates how much S and M stories can be done in the first sprints
+- The tech lead with support of the team roughly estimates how much S and M stories can be done in the first sprints
 - This rough estimation is refined over time and used to as an input for future sprint planning and to adjust project end date forecasting
 
 ### Example 2: Single Indicator
 
 - The team uses a single indicator: "does this story fits in one sprint?", if not, the story needs to be split
-- The dev lead with support of the team roughly estimates how many stories can be done in the first sprints
+- The tech lead with support of the team roughly estimates how many stories can be done in the first sprints
 - How many stories are done in each sprint on average is used as an input for future sprint planning and as an indicator to adjust project end date forecasting
 
 ### Example 3: Planning Poker
 
 - The team does planning poker and estimates in story points
 - Story points are roughly used to estimate how much can be done in next sprint
-- The dev lead and the Technical Program Manager (TPM) use past sprints and observed velocity to adjust project end date forecasting
+- The tech lead and the Technical Program Manager (TPM) use past sprints and observed velocity to adjust project end date forecasting
 
 ### Other Considerations
 

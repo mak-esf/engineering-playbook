@@ -1,6 +1,6 @@
 # Agile Development
 
-In this documentation we refer to the cross-functional delivery team as a **"Crew"** (i.e., the team responsible for delivery on a project). This includes the dev team, dev lead, product manager (PM), data scientists, etc.
+In this documentation we refer to the cross-functional delivery team as a **"Crew"** (i.e., the team responsible for delivery on a project). This includes the dev team, tech lead, product manager (PM), data scientists, etc.
 
 ## Why Agile
 
@@ -13,13 +13,13 @@ In this documentation we refer to the cross-functional delivery team as a **"Cre
 
 We care about the goal for each activity, but not necessarily about how they are accomplished. The suggestions in parenthesis are common ways to accomplish the goals.
 
-- We keep a shared backlog of work that everyone on the team can access (e.g., Azure DevOps, GitHub, Jira or other backlog tools)
+- We keep a shared backlog of work that everyone on the team can access (e.g., Jira, Github, or Azure DevOps)
 - We plan our work in iterations with clear goals (ex. sprints)
 - We have a clear idea of when work items are ready to implement (ex. definition of ready)
 - We have a clear idea of when work items are completed (ex. definition of done)
 - We communicate the progress in one place that everyone can access, and keep the progress up to date (ex. sprint board and daily standups)
 - We reflect on our work regularly to make improvements (ex. retrospectives)
-- The team has a clear idea of the roles and responsibilities in the project (e.g., dev lead, Technical Program Manager (TPM), Process Lead, etc.)
+- The team has a clear idea of the roles and responsibilities in the project (e.g., tech lead, Technical Program Manager (TPM), Process Lead, etc.)
 - The team has a clear idea of how we work together (ex. team agreement)
 - We value and respect the opinions and work of all team members.
 
