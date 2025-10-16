@@ -14,8 +14,8 @@ theme:
     text: Roboto
   palette:
     primary: black
-  logo: resources/ms_icon.png
-  favicon: resources/ms_icon.png
+  logo: resources/esf_icon.png
+  favicon: resources/esf_icon.png
   features:
     - navigation.instant
     - navigation.indexes
