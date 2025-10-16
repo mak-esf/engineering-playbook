@@ -4,7 +4,7 @@ Purpose: Provide a concise, practical policy and examples teams can adopt for in
 
 ## Recommended approach
 
-- Prefer trunk-based development where possible for new projects. Use short-lived feature branches when necessary and merge frequently into the default integration branch (commonly `main` or `trunk`).
+- Prefer trunk-based development where possible for new projects. Use short-lived feature branches when necessary and merge frequently into the default integration branch (commonly `main` or `master`).
 - Use branch protection rules on the integration branch to enforce quality gates (required passing CI, required code reviews, status checks).
 - Keep releases simple: use tags/releases from the integration branch and keep release process documented separately.
 
