@@ -33,7 +33,7 @@ their own, and adjust times, communication channels, branch naming policies etc.
 ## Quality and not Quantity
 
 - We agree on a [Definition of Done](definition-of-done.md) for our user story's and sprints and live by it.
-- We follow engineering best practices like the [Engineering Fundamentals Engineering Playbook](https://github.com/microsoft/code-with-engineering-playbook)
+- We follow engineering best practices like the [Engineering Playbook](https://github.com/esf/engineering-playbook)
 
 ## Scrum Rhythm
 

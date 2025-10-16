@@ -20,4 +20,4 @@ While the [OpenAPI-Specification (OAI)](https://github.com/OAI/OpenAPI-Specifica
 
 - [ASP.NET Core web API documentation with Swagger / OpenAPI](https://learn.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-5.0).
 - [Microsoft TypeSpec](https://github.com/Microsoft/typespec).
-- [Design Patterns - REST API Guidance](https://microsoft.github.io/code-with-engineering-playbook/design/design-patterns/rest-api-design-guidance/)
+- [Design Patterns - REST API Guidance](../../design/design-patterns/rest-api-design-guidance.md)

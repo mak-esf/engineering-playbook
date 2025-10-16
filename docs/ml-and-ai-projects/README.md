@@ -1,6 +1,6 @@
-# Machine Learning Fundamentals at ISE
+# Machine Learning Fundamentals at ESF Engineering
 
-This guideline documents the Machine Learning (ML) practices in ISE. ISE works with customers on ML/AI projects and putting them in production, with an emphasis on engineering and research best practices throughout the project's life cycle.
+This guideline documents the Machine Learning (ML) practices in ESF Engineering. ESF Engineering works with customers on ML/AI projects and putting them in production, with an emphasis on engineering and research best practices throughout the project's life cycle.
 
 ## Goals
 

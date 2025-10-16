@@ -1,8 +1,8 @@
 # Contributing
 
-Demonstrating Engineering Fundamentals is core to what we do in ISE and is one of the primary values we bring to our customers, helping them to level up while collaborating on their business scenarios.
+Demonstrating Engineering Fundamentals is core to what we do at ESF and is one of the primary values we bring to our customers, helping them to level up while collaborating on their business scenarios.
 
-The purpose of this repo is to provide guidance to ISE software engineers and data scientists (together forming a Dev Crew) with regards to engineering fundamentals. It describes recommended practices based on continuous project learnings in different areas. It can be used as a tool at the beginning of an engagement that can be shared with customers to help set the project up for success. This repo is *not* intended as a code repo, instead it provides guidance and links to appropriate sample code repos that represent good examples.
+The purpose of this repo is to provide guidance to ESF software engineers with regards to engineering fundamentals. It describes recommended practices based on continuous project learnings in different areas. It can be used as a tool at the beginning of an engagement that can be shared with customers to help set the project up for success. This repo is *not* intended as a code repo, instead it provides guidance and links to appropriate sample code repos that represent good examples.
 
 This project welcomes contributions and suggestions.
 
@@ -11,9 +11,6 @@ This project welcomes contributions and suggestions.
 - Patterns and practices that have worked well in engagements, related to our engineering fundamentals
 - Content that can be publicly visible (avoid confidential information)
 - Content that is generally applicable (avoid references to internal processes, or very specific information)
-- Short code snippets or links to OSS repos (avoid large code assets)
-
-If you are unsure if your content will match this playbook, you are welcome to contact one of the [Engineering Fundamentals Champs](https://github.com/microsoft/code-with-engineering-playbook/blob/main/.github/CODEOWNERS) to discuss the contribution.
 
 ## General guidance
 
@@ -37,35 +34,12 @@ or anything that improves the quality of the playbook
 
 ## How to contribute
 
-Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have
-the right to, and actually do, grant us the rights to use your contribution. For details, visit <https://cla.microsoft.com>.
-
-When you submit a pull request, a CLA-bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., label,
-comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repos using our CLA.
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
-### Permissions & Contributions
-
-There are two ways in which you can help update the content:
-
-- **One-off:** \
-If you are not a regular contributor to the project, but you would like to contribute some changes, the best way to do it is by [submitting a PR](#submitting-a-pr)
-
-- **Periodic and regular contributions:** \
-If you plan to update the content semi-regularly or regularly, you can be added to the project's Contributors group. Please contact one of the [maintainers](#maintainers) to be added to the group. You will still need to submit a PR against main in order to merge your changes.
-
-> NOTE: You need to be part of the `Microsoft organization` in GitHub to be added to the contributors group. You need to be also part of the `Microsoft/code-with-engineering-playbook-collaborators teams` in github.
-
-Since this is not considered an internal Microsoft github repo, you cannot use the microsoft github alias for committing changes. You have to use your personal github account which is linked to Microsoft account. If you use the microsoft github account, you will see this error while trying to create a PR - **"You cannot contribute to repositories outside of your enterprise `Microsoft EMU`"**.
-
 ### Submitting a PR
 
 - Add your changes to a new branch `<github alias>/<title>` or by forking the repository
 - Open a PR with a clear description of the changes
 - Tag the PR with the appropriate area, and link any issues that the PR closes
-- Add reviewers (you will need 2 reviewers to merge) to the PR, for example the [maintainers](#maintainers) or anyone from the [EF champs team](https://github.com/microsoft/code-with-engineering-playbook/blob/main/.github/CODEOWNERS)
+- Add reviewers (you will need 2 reviewers to merge) to the PR, for example the [maintainers](#maintainers) or anyone from the [EF champs team](https://github.com/esf/engineering-playbook/blob/main/.github/CODEOWNERS)
 
 ### Link checks
 
@@ -92,16 +66,5 @@ Finally, launch the site locally using the `mkdocs serve` command from the root 
 
 ## Maintainers
 
-For any questions or concerns, please contact [Tess Ferrandez](https://github.com/TessFerrandez), [Shiran Rubin](https://github.com/shiranr) or [Federica Nocera](https://github.com/fnocera).
+For any questions or concerns, please contact [Jim Ramia](mailto:jim.ramia@esolutionsfirst.com), [Vikram Ekollu](mailto:vikram.ekollu@esolutionsfirst.com) or [Amine Khammal](mailto:amine@esolutionsfirst.com).
 
-## Legal Notices
-
-Microsoft and any contributors grant you a license to the Microsoft documentation and other content in this repository under the [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/legalcode), see the [LICENSE](LICENSE) file, and grant you a license to any code in the repository under the [MIT License](https://opensource.org/license/MIT), see the [LICENSE-CODE](LICENSE-CODE) file.
-
-Microsoft, Windows, Microsoft Azure and/or other Microsoft products and services referenced in the documentation may be either trademarks or registered trademarks of Microsoft in the United States and/or other countries. The licenses for this project do not grant you rights to use any Microsoft
-names, logos, or trademarks. Microsoft's general trademark guidelines can be found at <https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks>.
-
-Privacy information can be found at <https://privacy.microsoft.com/en-us/>.
-
-Microsoft and any contributors reserve all others rights, whether under their respective copyrights, patents, or trademarks, whether by implication, estoppel
-or otherwise.

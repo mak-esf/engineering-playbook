@@ -278,8 +278,8 @@ A local git repository can have one or more backing remote repositories. You can
 
 ```sh
 > git remote -v
-origin  https://github.com/microsoft/code-with-engineering-playbook.git (fetch)
-origin  https://github.com/microsoft/code-with-engineering-playbook.git (push)
+origin  https://github.com/esf/engineering-playbook.git (fetch)
+origin  https://github.com/esf/engineering-playbook.git (push)
 ```
 
 ### Working with Forks

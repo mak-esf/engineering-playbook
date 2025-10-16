@@ -1,6 +1,6 @@
 # Naming Branches
 
-When contributing to existing projects, look for and stick with the agreed branch naming convention. In open source projects this information is typically found in the contributing instructions, often in a file named `CONTRIBUTING.md`.
+When contributing to existing projects, look for and stick with the agreed branch naming convention.
 
 In the beginning of a new project the team agrees on the project conventions including the branch naming strategy.
 

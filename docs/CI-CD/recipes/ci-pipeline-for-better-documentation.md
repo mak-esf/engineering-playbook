@@ -33,4 +33,4 @@ To start using this pipeline:
 
 ## Resources
 
-[Markdown Code Reviews in the Engineering Fundamentals Playbook](https://microsoft.github.io/code-with-engineering-playbook/code-reviews/recipes/markdown/#code-review-checklist)
+[Markdown Code Reviews in the Engineering Playbook](../../code-reviews/recipes/markdown.md#code-review-checklist)

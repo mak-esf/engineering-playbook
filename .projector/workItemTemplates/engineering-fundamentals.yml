@@ -53,11 +53,11 @@ items:
               The process for design reviews should be documented and available
               to the whole team from the outset of the project. This story is to
               explicitly document that process in the team's [working
-              agreement](https://microsoft.github.io/code-with-engineering-playbook/agile-development/team-agreements/working-agreements/readme/)
+              agreement](https://esf.github.io/engineering-playbook/agile-development/team-agreements/working-agreements/readme/)
             acceptanceCriteria:
               - Design review process is well-documented within the working
                 agreement
-              - Process has been reviewed by both the Microsoft and customer team
+              - Process has been reviewed by both the ESF and customer team
               - Document committed to customer repo
           - name:
               As a dev crew, we have standardized on a template for conducting design
@@ -66,7 +66,7 @@ items:
             description:
               All design reviews should follow a well-known template. If that
               template is not found in the
-              [playbook](https://github.com/microsoft/code-with-engineering-playbook/tree/main/docs/design/design-reviews),
+              [playbook](https://github.com/esf/engineering-playbook/tree/main/docs/design/design-reviews),
               consider contributing your template back to it.
             acceptanceCriteria:
               - Team has decided on a template for design review documents
@@ -508,7 +508,7 @@ items:
           - name:
               As a dev crew, if this engagement is considered a tented project or
               sensitive work, we have ensured that project details are not
-              tracked within ISE tooling
+              tracked within ESF Engineering tooling
             type: story
           - name:
               As a dev crew, if applicable, all crew members have acknowledged any
