@@ -21,6 +21,9 @@ theme:
     - navigation.instant
     - navigation.indexes
 
+exclude_docs: |
+  archive/
+
 plugins:
   - search
   - git-revision-date-localized
