@@ -71,4 +71,4 @@ The purpose of this document is to:
   - Determine required participants
   - Update the [Definition of Ready](agile-development/team-agreements/definition-of-ready.md)
   - Update estimates, and the [Estimation](agile-development/ceremonies.md#estimation) document
-- [ ] [Submit Engineering Feedback for issues encountered](engineering-feedback/README.md)
+- [ ] Conduct a team retrospective and capture lessons learned

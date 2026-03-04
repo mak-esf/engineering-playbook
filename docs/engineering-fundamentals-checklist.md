@@ -98,14 +98,6 @@ More details on [code reviews](./code-reviews/README.md)
 
 More details on [retrospectives](./agile-development/ceremonies.md#retrospectives)
 
-## Engineering Feedback
-
-- [ ] The team submits feedback on business and technical blockers that prevent project success
-- [ ] Suggestions for improvements are incorporated in the solution
-- [ ] Feedback is detailed and repeatable
-
-More details on [engineering feedback](./engineering-feedback/README.md)
-
 ## Developer Experience (DevEx)
 
 Developers on the team can:
