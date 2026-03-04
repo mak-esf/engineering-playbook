@@ -39,16 +39,16 @@ their own, and adjust times, communication channels, branch naming policies etc.
 
 | Activity | When | Duration | Who | Accountable | Goal |
 | -- | -- | -- | -- | -- | -- |
-| Project Standup | Tue-Fri 9AM           | 15 min   | Everyone     | Process Lead | What has been accomplished, next steps, blockers                           |
+| Project Standup | Tue-Fri 9AM           | 15 min   | Everyone     | Scrum Master | What has been accomplished, next steps, blockers                           |
 | Sprint Demo                                           | Monday 9AM            | 1 hour   | Everyone     | Dev Lead     | Present work done and sign off on user story completion                    |
-| Sprint Retro | Monday 10AM           | 1 hour   | Everyone     | Process Lead | Dev Teams shares learnings and what can be improved                        |
+| Sprint Retro | Monday 10AM           | 1 hour   | Everyone     | Scrum Master | Dev Teams shares learnings and what can be improved                        |
 | Sprint Planning | Monday 11AM           | 1 hour   | Everyone     | PO           | Size and plan user stories for the sprint                                  |
 | Task Creation | After Sprint Planning | -        | Dev Team     | Dev Lead     | Create tasks to clarify and determine velocity                             |
 | Backlog refinement | Wednesday 2PM         | 1 hour   | Dev Lead, PO | PO           | Prepare for next sprint and ensure that stories are ready for next sprint. |
 
-## Process Lead
+## Scrum Master
 
-The Process Lead is responsible for leading any scrum or agile practices to enable the project to move forward.
+The Scrum Master is responsible for leading any scrum or agile practices to enable the project to move forward.
 
 - Facilitate standup meetings and hold team accountable for attendance and participation.
 - Keep the meeting moving as described in the [Project Standup](../ceremonies.md) page.

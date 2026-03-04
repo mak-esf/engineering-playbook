@@ -19,7 +19,7 @@ We care about the goal for each activity, but not necessarily about how they are
 - We have a clear idea of when work items are completed (ex. definition of done)
 - We communicate the progress in one place that everyone can access, and keep the progress up to date (ex. sprint board and daily standups)
 - We reflect on our work regularly to make improvements (ex. retrospectives)
-- The team has a clear idea of the roles and responsibilities in the project (e.g., tech lead, Technical Program Manager (TPM), Process Lead, etc.)
+- The team has a clear idea of the roles and responsibilities in the project (e.g., tech lead, Technical Program Manager (TPM), Scrum Master, etc.)
 - The team has a clear idea of how we work together (ex. team agreement)
 - We value and respect the opinions and work of all team members.
 

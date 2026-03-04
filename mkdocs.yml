@@ -13,9 +13,10 @@ theme:
   font:
     text: Roboto
   palette:
-    primary: black
-  logo: resources/esf_icon.png
-  favicon: resources/esf_icon.png
+    primary: red 
+    accent: red
+  logo: resources/esf_icon_white.svg
+  favicon: resources/esf_icon_red.svg
   features:
     - navigation.instant
     - navigation.indexes
@@ -24,6 +25,10 @@ plugins:
   - search
   - git-revision-date-localized
   - awesome-pages
+  # - mkdocs-simple-hooks:
+  #    enabled: !ENV [ENABLE_MKDOCS_ASPX, False]
+  #    hooks:
+  #      on_files: "hooks:on_files"
 
 markdown_extensions:
   - meta

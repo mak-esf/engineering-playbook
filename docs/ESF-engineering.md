@@ -1,4 +1,4 @@
-# Who is ESF Engineering (eSolutions First Engineering)
+# About ESF Engineering
 
 Our team, ESF Engineering (eSolutions First Engineering), specializes in data- and AI-centric digital solutions and products. With our "Zero-to-Production Acceleration" mindset, we turn prototypes into production-grade applications, pipelines, models, etc. at speed.
 

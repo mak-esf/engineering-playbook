@@ -35,7 +35,7 @@ technical debt risk minimum.
 ## Following the Plan and Agile Debugging
 
 Identification phase accelerates the process of building a safe environment for every individual in the team, later on team has the required assets to follow the plan.
-And it is team's itself responsibility (engineers,PO,Process Lead) to debug their Agility level.
+And it is team's itself responsibility (engineers,PO,Scrum Master) to debug their Agility level.
 
 In every team stabilization takes time and pro-active agile debugging is the best accelerator to decrease the distraction away from sprint/engagement goal.
 Team is also responsible to keep the plan up-to-date based on team changes/needs and debugging results.

@@ -1,8 +1,8 @@
 nav:
-  - ESF Engineering Engineering Fundamentals Playbook: README.md
+  - About this Playbook: README.md
+  - About ESF Engineering: ESF-engineering.md
   - Engineering Fundamentals Checklist: engineering-fundamentals-checklist.md
   - Week One of a Project: week-one-of-a-project.md
-  - Who is ESF Engineering?: ESF-engineering.md
   - Agile Development: agile-development
   - Automated Testing: automated-testing
   - CI/CD: CI-CD

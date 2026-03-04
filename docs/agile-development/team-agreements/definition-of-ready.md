@@ -23,7 +23,7 @@ It can be understood as a checklist that helps the Product Owner to ensure that 
 
 ## Who Writes it
 
-The ready checklist can be written by a Product Owner in agreement with the development team and the Process Lead.
+The ready checklist can be written by a Product Owner in agreement with the development team and the Scrum Master.
 
 ## When Should a Definition of Ready be Updated
 
