@@ -8,15 +8,17 @@ This is a **documentation-only repository** — the ESF Engineering Playbook, a 
 
 ## Development Commands
 
+A `uv`-managed virtual environment is used. The `.venv` is at the project root.
+
 ```bash
-# Install Python dependencies
-pip3 install -r requirements-docs.txt
+# Create virtual environment and install dependencies
+uv venv && uv pip install -r requirements-docs.txt
 
 # Serve locally with live reload (http://localhost:8000)
-mkdocs serve
+uv run mkdocs serve
 
 # Build static site to /site/
-mkdocs build
+uv run mkdocs build
 ```
 
 ## Linting

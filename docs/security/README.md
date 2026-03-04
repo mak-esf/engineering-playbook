@@ -1,98 +1,92 @@
 # Security
 
-Developers working on projects should adhere to industry-recommended standard practices for secure design and implementation of code. For the purposes of our customers, this means our engineers should understand the [OWASP Top 10 Web Application Security Risks](https://owasp.org/www-project-top-ten/), as well as how to mitigate as many of them as possible, using the resources below.
+Developers working on projects should adhere to industry-recommended standard practices for secure design and implementation of code. Our engineers should understand the [OWASP Top 10 Web Application Security Risks](https://owasp.org/www-project-top-ten/), as well as how to mitigate as many of them as possible.
 
-**If you are looking for a fast way to get started** evaluating your application or design, check out the "Secure Coding Practices Quick Reference" document below, which contains an itemized checklist of high-level concepts you can validate are being done properly. This checklist covers many common errors associated with the OWASP Top 10 list linked above, and should be the minimum amount of effort being put into security.
-
-## Requesting Security Reviews
-
-When requesting a security review for your application, please make sure you have familiarized yourself with the [Rules of Engagement](./rules-of-engagement.md). This will help you to prepare the application for testing, as well as understand the scope limits of the test.
+**If you are looking for a fast way to get started** evaluating your application or design, check out the "Secure Coding Practices Quick Reference" document below, which contains an itemized checklist of high-level concepts you can validate are being done properly.
 
 ## Quick Resources
 
 - [Secure Coding Practices Quick Reference](https://owasp.org/www-pdf-archive/OWASP_SCP_Quick_Reference_Guide_v2.pdf)
 - [Web Application Security Quick Reference](https://owasp.org/www-pdf-archive//OWASP_Web_Application_Security_Quick_Reference_Guide_0.3.pdf)
 - [Security Mindset/Creating a Security Program Quick Start](https://github.com/OWASP/Quick-Start-Guide/blob/master/OWASP%20Quick%20Start%20Guide.pdf?raw=true)
-- [Credential Scanning / Secret Detection](../CI-CD/dev-sec-ops/secrets-management/credential_scanning.md)
-- [Threat Modelling](./threat-modelling.md)
-
-## Azure DevOps Security
-
-- [Security Engineering DevSecOps Practices](https://wiki.owasp.org/images/0/08/OWASP_SCP_Quick_Reference_Guide_v2.pdf)
-- [Azure DevOps Data Protection Overview](https://learn.microsoft.com/en-us/azure/devops/organizations/security/data-protection?view=azure-devops)
-- [Security and Identity in Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/organizations/security/about-security-identity?view=azure-devops)
-- [Security Code Analysis](https://secdevtools.azurewebsites.net/)
+- Credential Scanning / Secret Detection — see [Secrets Management](../CI-CD/dev-sec-ops/secrets-management/README.md)
 
 ## DevSecOps
 
-Introduce security to your project at early stages. The [DevSecOps section](../CI-CD/dev-sec-ops/README.md) covers security practices, automation, tools and frameworks as part of the application CI.
+Introduce security to your project at early stages. Security practices, automation, tools, and frameworks should be integrated as part of the CI pipeline — see [Secrets Management](../CI-CD/dev-sec-ops/secrets-management/README.md) for one example.
 
 ## OWASP Cheat Sheets
 
-> Note: OWASP is considered to be the gold-standard in computer security information. OWASP maintains an extensive series of cheat sheets which cover all the OWASP Top 10 and more. Below, many of the more relevant cheat sheets have been summarized. To view all the cheat sheets, check out their [Cheat Sheet Index](https://github.com/OWASP/CheatSheetSeries/blob/master/Index.md).
+> OWASP is considered to be the gold-standard in computer security information. To view all cheat sheets, check out their [Cheat Sheet Index](https://github.com/OWASP/CheatSheetSeries/blob/master/Index.md).
 
 - [Attack Surface Analysis](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Attack_Surface_Analysis_Cheat_Sheet.md)
 - [Authorization Basics](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Authorization_Cheat_Sheet.md)
-- [Content Security Policy (CSP)](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Content_Security_Policy_Cheat_Sheet.md)
 - [Cross-Site Request Forgery (CSRF) Prevention](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md)
 - [Cross-Site Scripting (XSS) Prevention](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md)
-- [Cryptographic Storage](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cryptographic_Storage_Cheat_Sheet.md)
-- [Deserialization](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Deserialization_Cheat_Sheet.md)
-- [Docker/Kubernetes (k8s) Security](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Docker_Security_Cheat_Sheet.md)
 - [Input Validation](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Input_Validation_Cheat_Sheet.md)
-- [Key Management](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Key_Management_Cheat_Sheet.md)
-- [OS Command Injection Defense](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.md)
-- [Query Parameterization Examples](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Query_Parameterization_Cheat_Sheet.md)
-- [Server-Side Request Forgery Prevention](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.md)
 - [SQL Injection Prevention](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.md)
-- [Unvalidated Redirects and Forwards](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.md)
-- [Web Service Security](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Web_Service_Security_Cheat_Sheet.md)
-- [XML Security](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/XML_Security_Cheat_Sheet.md)
+- [Cryptographic Storage](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cryptographic_Storage_Cheat_Sheet.md)
 
 ## Recommended Tools
 
-Check out the list of tools to help enable security in your projects.
+- **Vulnerability Scanning:** [SonarCloud](https://sonarcloud.io/), [Snyk](https://github.com/snyk/snyk), [Trivy](https://github.com/aquasecurity/trivy), [Anchore](https://github.com/anchore/anchore-engine)
+- **Runtime Security:** [Falco](https://github.com/falcosecurity/falco), [Tracee](https://github.com/aquasecurity/tracee)
+- **K8s Security:** [OPA/Gatekeeper](https://github.com/open-policy-agent/gatekeeper), [cert-manager](https://github.com/jetstack/cert-manager)
 
-> **Note:** Although some tools are agnostic, the below list is geared towards Cloud Native security, with a focus on Kubernetes.
+---
 
-- Vulnerability Scanning
+## Threat Modeling
 
-  - [SonarCloud](https://sonarcloud.io/)
-    - Integrates with Azure Devops with the click of a button.
-  - [Snyk](https://github.com/snyk/snyk)
-  - [Trivy](https://github.com/aquasecurity/trivy)
-  - [Cloudsploit](https://github.com/aquasecurity/cloudsploit)
-  - [Anchore](https://github.com/anchore/anchore-engine)
-  - [Other tools from OWASP](https://owasp.org/www-community/Vulnerability_Scanning_Tools)
-  - [See why you should check for vulnerabilities at all layers of the stack](https://sysdig.com/blog/image-scanning-best-practices/), as well as a couple of other useful tips to reduce surface area for attacks.
+Threat modeling is a systematic approach to identifying potential threats and recommendations to help reduce risk and meet security objectives earlier in the development lifecycle.
 
-- Runtime Security
+### STRIDE Framework
 
-  - [Falco](https://github.com/falcosecurity/falco)
-  - [Tracee](https://github.com/aquasecurity/tracee)
-  - [Kubelinter](https://github.com/stackrox/kube-linter)
-    - May not fully qualify as runtime security, but helps ensure you're enabling best practices.
+Use the **STRIDE** framework to identify threats:
 
-- Binary Authorization
+| Threat | Description |
+|--------|-------------|
+| **S**poofing | Impersonating something or someone |
+| **T**ampering | Modifying data or code |
+| **R**epudiation | Claiming not to have performed an action |
+| **I**nformation disclosure | Exposing information to unauthorized parties |
+| **D**enial of service | Denying or degrading service |
+| **E**levation of privilege | Gaining capabilities without proper authorization |
 
-  Binary authorization can happen both at the docker registry layer, and runtime (ie: via a K8s admission controller).
-  The authorization check ensures that the image is signed by a trusted authority. This can occur for both (pre-approved) 3rd party images,
-  and internal images. Taking this a step further the signing should occur _only_ on images where all code has been reviewed and approved.
-  Binary authorization can both reduce the impact of damage from a compromised hosting environment, and the damage from malicious insiders.
+### Threat Modeling Phases
 
-  - [Harbor](https://github.com/goharbor/harbor/)
-    - [Operator available](https://github.com/goharbor/harbor-operator)
-  - [Portieris](https://github.com/IBM/portieris)
-  - [Notary](https://github.com/theupdateframework/notary)
-    - Note harbor leverages notary internally.
-  - [TUF](https://github.com/theupdateframework/tuf)
+1. **Diagram** — Capture all requirements for your system and create a data-flow diagram
+2. **Identify** — Apply the STRIDE framework to the data-flow diagram to find potential security issues
+3. **Mitigate** — Decide how to approach each issue with the appropriate combination of security controls
+4. **Validate** — Verify requirements are met, issues are found, and security controls are implemented
 
-- Other K8s Security
+### Resources
 
-  - [OPA](https://github.com/open-policy-agent/opa), [Gatekeeper](https://github.com/open-policy-agent/gatekeeper), and the [Gatekeeper Library](https://github.com/open-policy-agent/gatekeeper-library/tree/master/library)
-  - [cert-manager](https://github.com/jetstack/cert-manager) for easy certificate provisioning and automatic rotation.
-  - [Quickly enable mTLS between your microservices with Linkerd](https://linkerd.io/2/features/automatic-mtls/).
+- [Microsoft Threat Modeling Tool](https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool)
+- [STRIDE framework](https://learn.microsoft.com/en-us/training/modules/tm-use-a-framework-to-identify-threats-and-find-ways-to-reduce-or-eliminate-risk/1b-threat-modeling-framework)
+- [Threat Modeling Security Fundamentals](https://learn.microsoft.com/en-us/training/paths/tm-threat-modeling-fundamentals/)
+
+---
+
+## Security Testing Rules of Engagement
+
+When performing application security analysis or requesting a security review, follow these rules.
+
+### For Those Requesting a Review
+
+- Web Application Firewalls can be configured but do not enable automatic blocking — it will greatly slow down the tester
+- Do not make changes to the running application until the test is complete (to avoid accidentally breaking a valid attack in progress)
+- Disable services such as `fail2ban` on VMs during the test
+- Any review results are not considered "final" — a formal security review by the customer's security team is required before moving an application into production
+
+### For Those Performing Tests
+
+- Do not attempt to perform Denial-of-Service attacks or otherwise crash services; heavy active scanning is tolerated
+- Do not interact with human beings — phishing credentials or client-side attacks are off-limits; documenting XSS and similar vulnerabilities is encouraged, but do not leverage them against internal users or customers
+- Attack from a single point and provide the IP address or hostname of the attacking host to avoid setting off alarms
+
+---
 
 ## Resources
 
 - [Non-Functional Requirements Guidance](../design/design-patterns/non-functional-requirements-capture-guide.md)
+- [Azure DevOps Data Protection Overview](https://learn.microsoft.com/en-us/azure/devops/organizations/security/data-protection?view=azure-devops)

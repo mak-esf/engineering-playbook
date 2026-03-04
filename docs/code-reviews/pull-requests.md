@@ -1,72 +1,50 @@
-# Pull Requests
+# Pull Requests & Code Reviews
 
-Changes to any main codebase - main branch in Git repository, for example - must be done using pull requests (PR).
+## Why Code Reviews
+
+Peer code reviews on every pull request are a core engineering practice. Code review is a way to have a conversation about the code where participants will:
+
+- **Improve code quality** by identifying and removing defects before they can be introduced into shared code branches.
+- **Learn and grow** by getting exposed to unfamiliar design patterns or languages, and breaking bad habits.
+- **Build shared understanding** between developers over the project's code.
+
+---
+
+## Pull Requests
+
+Changes to any main codebase must be done using pull requests (PR).
 
 Pull requests enable:
 
-* Code inspection - see [Code Reviews](./README.md)
-* Running automated qualification of the code
-  * Linters
-  * Compilation
-  * Unit tests
-  * Integration tests etc.
+- Code inspection and review
+- Running automated qualification of the code (linters, compilation, unit tests, integration tests)
 
-The requirements of pull requests can and should be enforced by policies, which can be set in the most modern version control and work item tracking systems. See [Evidence and Measures section](./evidence-and-measures/README.md) for more information.
+The requirements of pull requests can and should be enforced by policies in your version control system.
 
 ## General Process
 
 1. Implement changes based on the well-defined description and acceptance criteria of the task at hand
-1. Then, before creating a new pull request:
-    * Make sure the code conforms with the agreed coding conventions
-        * This can be partially automated using linters
-    * Ensure the code compiles and runs without errors or warnings
-    * Write and/or update tests to cover the changes and make sure all new and existing tests pass
-    * Write and/or update the documentation to match the changes
-1. Once convinced the criteria above are met, create and submit a new pull request adhering to the [pull request template](./pull-request-template.md)
-1. Follow the [code review](./process-guidance/README.md) process to merge the changes to the main codebase
-
-The following diagram illustrates this approach.
-
-```mermaid
-sequenceDiagram
-New branch->>+Pull request: New PR creation
-Pull request->>+Code review: Review process
-Code review->>+Pull request: Code updates
-Pull request->>+New branch: Merge Pull Request
-Pull request-->>-New branch: Delete branch
-Pull request ->>+ Main branch: Merge after completion
-New branch->>+Main branch: Goal of the Pull request
-```
+1. Before creating a new pull request:
+    - Make sure the code conforms with the agreed coding conventions (partially automated using linters)
+    - Ensure the code compiles and runs without errors or warnings
+    - Write and/or update tests to cover the changes and make sure all new and existing tests pass
+    - Write and/or update the documentation to match the changes
+1. Create and submit a new pull request
+1. Follow the code review process to merge the changes to the main codebase
 
 ## Size Guidance
 
-We should always aim to keep pull requests small. Small PRs have multiple advantages:
+Always aim to keep pull requests small. Small PRs:
 
-* They are easier to review; a clear benefit for the reviewers.
-* They are easier to deploy; this is aligned with the strategy of release fast and release often.
-* Minimizes possible conflicts and stale PRs.
+- Are easier to review
+- Are easier to deploy (aligned with release fast and release often)
+- Minimize possible conflicts and stale PRs
 
-However, we should keep PRs focused - for example around a functional feature, optimization or code readability and avoid having PRs that include code that is without context or loosely coupled. There is no right size, but keep in mind that a code review is a collaborative process, a big PRs could be difficult and therefore slower to review. We should always strive to have as small PRs as possible that still add value.
-
-## Best Practices
-
-Beyond the size, remember that every PR should:
-
-* be consistent,
-* not break the build, and
-* include related tests as part of the PR.
-
-Be consistent means that all the changes included on the PR should aim to solve one goal (ex. one user story) and be intrinsically related. Think of this as the Single-responsibility principle in terms of the whole project, the PR should have only one *reason to change* the project.
-
-Start small, it is easier to create a small PR from the start than to break up a bigger one.
-
-These are some strategies to keep PRs small depending on the "cause" of the inevitability, you could break the PR into self-container changes which still add value, release features that are hidden (see feature flag, feature toggling or canary releases) or break the PR into different layers (for example using design patterns like MVC or Observer/Subject). No matter the strategy.
+Keep PRs focused around a functional feature, optimization, or code readability concern. Start small — it is easier to create a small PR from the start than to break up a bigger one.
 
 ## Pull Request Description
 
-Well written PR descriptions helps maintain a clean, well-structured change history. While every team need not conform to the same specification, it is important that the convention is agreed upon at the start of the project.
-
-One popular specification for open-source projects and others is the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0-beta.2/), which is structured as:
+Well written PR descriptions help maintain a clean, well-structured change history. A widely used specification is [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/):
 
 ```txt
 <type>[optional scope]: <description>
@@ -76,17 +54,66 @@ One popular specification for open-source projects and others is the [Convention
 [optional footer]
 ```
 
-The `<type>` in this message can be selected from a list of types defined by the team, but many projects use the [list of commit types from the Angular open-source project](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#type). It should be clear that `scope`, `body` and `footer` elements are **optional**, but having a required `type` and short description enables the features mentioned above.
+Common `<type>` values: `feat`, `fix`, `refactor`, `docs`, `test`, `chore`.
 
-See also [Pull Request Template](./pull-request-template.md)
+---
+
+## Author Checklist
+
+When creating a PR:
+
+- [ ] Give the PR a descriptive title (one short sentence describing what the PR is about)
+- [ ] Write a proper description that shows the reviewer what has been changed and why
+- [ ] Link the corresponding work item/task to the PR
+- [ ] Add one or more reviewers — ideally someone with expertise in the project or language, plus someone less familiar to verify readability
+- [ ] In code-with projects, include reviewers from both organizations for knowledge transfer
+- [ ] If the PR is large, add inline code comments explaining the goal of key code blocks
+- [ ] Resolve all review comments: either make the requested change, or mark as "won't fix" with clear reasoning; if the change is out of scope, create a new work item
+- [ ] If you don't understand a comment, ask questions in the review itself (not in a private chat)
+
+---
+
+## Reviewer Checklist
+
+Human reviewers should focus on architectural and functional correctness (linters handle style). Key areas:
+
+### Design Pass
+
+- [ ] Does the PR description make sense?
+- [ ] Do all the changes logically fit in this PR, or are there unrelated changes?
+- [ ] Are there updates to README or docs if the change affects how users build/use the code?
+- [ ] For user-facing changes: is there a screenshot/GIF explaining the functionality?
+- [ ] Do the interactions of the various pieces of code make sense?
+- [ ] Does the code recognize and incorporate existing architectural patterns?
+
+### Code Quality Pass
+
+- [ ] Are functions too complex? Is the single responsibility principle followed?
+- [ ] Did the developer pick good names for functions and variables?
+- [ ] Are errors handled gracefully and explicitly where necessary?
+- [ ] Is there any parallel programming that could cause race conditions?
+- [ ] Are there security flaws? Does any variable name reveal customer-specific or PII data?
+- [ ] Is PII and EUII treated correctly? Are we logging any PII information?
+
+### Tests
+
+- [ ] Tests are committed in the same PR as the code ("I'll add tests next" is not acceptable)
+- [ ] Test assumptions are sensible and edge cases are handled
+- [ ] Tests can be used to understand the changes (consider reading tests first)
+
+### Reviewer Etiquette
+
+- Be positive — encourage good practices, acknowledge good work
+- Prefix minor polish comments with "Nit:"
+- Use "we" or "this line" rather than "you" — code reviews are not personal
+- Prefer asking questions over making statements; there may be a good reason for an author's approach
+- If a few back-and-forth comments don't resolve a disagreement, have a quick call
+
+---
 
 ## Resources
 
-* [Writing a great pull request description](https://www.pullrequest.com/blog/writing-a-great-pull-request-description/)
-* [Review code-with pull requests (Azure DevOps)](https://learn.microsoft.com/azure/devops/repos/git/pull-requests)
-* [Collaborating with issues and pull requests (GitHub)](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests)
-* [Google approach to PR size](https://google.github.io/eng-practices/review/developer/small-cls.html)
-* [Feature Flags](https://www.martinfowler.com/articles/feature-toggles.html)
-* [Facebook approach to hidden features](https://launchdarkly.com/blog/secret-to-facebooks-hacker-engineering-culture/)
-* [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0-beta.2/)
-* [Angular Commit types](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#type)
+- [Google's Engineering Practices: How to do a code review](https://google.github.io/eng-practices/review/reviewer/)
+- [Writing a great pull request description](https://www.pullrequest.com/blog/writing-a-great-pull-request-description/)
+- [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0-beta.2/)
+- [Google approach to PR size](https://google.github.io/eng-practices/review/developer/small-cls.html)

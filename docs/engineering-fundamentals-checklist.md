@@ -10,7 +10,7 @@ This checklist helps to ensure that our projects meet our Engineering Fundamenta
 - [ ] Commit history is consistent and commit messages are informative (what, why).
 - [ ] Consistent branch naming conventions.
 - [ ] Clear documentation of repository structure.
-- [ ] Secrets are not part of the commit history or made public. (see [Credential scanning](./CI-CD/dev-sec-ops/secrets-management/credential_scanning.md))
+- [ ] Secrets are not part of the commit history or made public. (see [Secrets Management](./CI-CD/dev-sec-ops/secrets-management/README.md))
 
 More details on [source control](./source-control/README.md)
 
@@ -19,7 +19,7 @@ More details on [source control](./source-control/README.md)
 - [ ] All items are tracked in JIRA.
 - [ ] The board is organized (swim lanes, feature tags, technology tags).
 
-More details on [backlog management](./agile-development/backlog-management.md)
+More details on [agile ceremonies and backlog management](./agile-development/ceremonies.md)
 
 ## Testing
 
@@ -34,7 +34,7 @@ More details on [automated testing](./automated-testing/README.md)
 - [ ] Project uses CD to manage deployments to a replica environment before PRs are merged.
 - [ ] Main branch is always shippable.
 
-More details on [continuous integration](./CI-CD/continuous-integration.md) and [continuous delivery](./CI-CD/continuous-delivery.md)
+More details on [CI/CD](./CI-CD/continuous-integration.md)
 
 ## Security
 
@@ -52,10 +52,9 @@ More details on [security](./security/README.md)
 - [ ] Health of the system is monitored.
 - [ ] The client and server side observability data can be differentiated.
 - [ ] Logging configuration can be modified without code changes (eg: verbose mode).
-- [ ] [Incoming tracing context](./observability/correlation-id.md) is propagated to allow for production issue debugging purposes.
 - [ ] GDPR compliance is ensured regarding PII (Personally Identifiable Information).
 
-More details on [observability](./observability/README.md)
+More details on [observability](./observability/best-practices.md)
 
 ## Agile/Scrum
 
@@ -64,7 +63,7 @@ More details on [observability](./observability/README.md)
 - [ ] The Lead(s) (Business/Tech) are responsible for backlog management and refinement.
 - [ ] A working agreement is established between team members and customer.
 
-More details on [agile development](./agile-development/README.md)
+More details on [agile ceremonies](./agile-development/ceremonies.md)
 
 ## Design Reviews
 
@@ -75,9 +74,8 @@ More details on [agile development](./agile-development/README.md)
 - [ ] Project stakeholders are invited to design reviews or asked to give feedback to the design decisions captured in documentation.
 - [ ] Discover all the reviews that the customer's processes require and plan for them.
 - [ ] Clear non-functional requirements captured (see [Non-Functional Requirements Guidance](./design/design-patterns/non-functional-requirements-capture-guide.md))
-- [ ] Risks and opportunities captured (see [Risk/Opportunity Management](./agile-development/advanced-topics/backlog-management/risk-management.md))
 
-More details on [design reviews](./design/design-reviews/README.md)
+More details on [design and NFRs](./design/design-patterns/non-functional-requirements-capture-guide.md)
 
 ## Code Reviews
 
@@ -87,7 +85,7 @@ More details on [design reviews](./design/design-reviews/README.md)
 - [ ] Linters/Code Analyzers, unit tests and successful builds for PR merges are set up.
 - [ ] There is a process to enforce a quick review turnaround.
 
-More details on [code reviews](./code-reviews/README.md)
+More details on [pull requests and code reviews](./code-reviews/pull-requests.md)
 
 ## Retrospectives
 
@@ -109,4 +107,4 @@ Developers on the team can:
 - [ ] Automatically install dependencies in their IDE.
 - [ ] Use local dev configuration values (i.e. .env, appsettings.development.json).
 
-More details on [developer experience](./developer-experience/README.md)
+More details on [developer experience and AI tools](./developer-experience/copilots.md)

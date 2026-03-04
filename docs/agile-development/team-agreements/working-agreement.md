@@ -14,14 +14,14 @@ their own, and adjust times, communication channels, branch naming policies etc.
 - We work as one team towards a common goal and clear scope
 - We make sure everyone's voice is heard, listened to
 - We show all team members equal respect
-- We work as a team to have common expectations for technical delivery that are documented in a [Team Manifesto](team-manifesto.md).
+- We work as a team to have common expectations for technical delivery documented in a shared Team Manifesto.
 - We make sure to spread our expertise and skills in the team, so no single person is relied on for one skill
 - All times below are listed in CET
 
 ## Communication
 
 - We communicate all information relevant to the team through the Project Teams channel
-- We add all [technical spikes](../../design/design-reviews/recipes/technical-spike.md), [trade studies](../../design/design-reviews/trade-studies/README.md), and other technical documentation to the project repository through [async design reviews in PRs](../../design/design-reviews/recipes/async-design-reviews.md)
+- We add all technical spikes, trade studies, and other technical documentation to the project repository through async design reviews in PRs
 
 ## Work-life Balance
 
@@ -32,7 +32,7 @@ their own, and adjust times, communication channels, branch naming policies etc.
 
 ## Quality and not Quantity
 
-- We agree on a [Definition of Done](definition-of-done.md) for our user story's and sprints and live by it.
+- We agree on a Definition of Done for our user stories and sprints and live by it.
 - We follow engineering best practices like the [Engineering Playbook](https://github.com/esf/engineering-playbook)
 
 ## Scrum Rhythm
@@ -64,11 +64,11 @@ The Scrum Master is responsible for leading any scrum or agile practices to enab
 
 ## Backlog Management
 
-- We work together on a [Definition of Ready](definition-of-ready.md) and all user stories assigned to a sprint need to follow this
+- We work together on a Definition of Ready and all user stories assigned to a sprint need to follow this
 - We communicate what we are working on through the board
 - We assign ourselves a task when we are ready to work on it (not before) and move it to active
 - We capture any work we do related to the project in a user story/task
-- We close our tasks/user stories only when they are done (as described in the [Definition of Done](definition-of-done.md))
+- We close our tasks/user stories only when they are done (as described in the team's Definition of Done)
 - We work with the PM if we want to add a new user story to the sprint
 - If we add new tasks to the board, we make sure it matches the acceptance criteria of the user story (to avoid scope creep).
   If it doesn't match the acceptance criteria we should discuss with the PM to see if we need a new user story for the task or if we should adjust the acceptance criteria.
@@ -80,4 +80,4 @@ The Scrum Master is responsible for leading any scrum or agile practices to enab
 - All PRs are reviewed by one person from <Customer/Partner Name> and one from Microsoft (for knowledge transfer and to ensure code and security standards are met)
 - We always review existing PRs before starting work on a new task
 - We look through open PRs at the end of stand-up to make sure all PRs have reviewers.
-- We treat documentation as code and apply the same [standards to Markdown](../../code-reviews/recipes/markdown.md) as code
+- We treat documentation as code and apply the same standards to Markdown as code

@@ -31,7 +31,7 @@ This checklist helps ensure that our ML projects meet our ML Fundamentals. The i
 
 ## Model Baseline
 
-- [ ] Well-defined baseline model exists and its performance is calculated. ([More details on well defined baselines](./ml-model-checklist.md#is-there-a-well-defined-baseline-is-the-model-performing-better-than-the-baseline))
+- [ ] Well-defined baseline model exists and its performance is calculated. (see ML Model Checklist in archive)
 - [ ] The performance of other ML models can be compared with the model baseline.
 
 ## Experimentation setup
@@ -45,7 +45,7 @@ This checklist helps ensure that our ML projects meet our ML Fundamentals. The i
 
 ## Production
 
-- [ ] [Model readiness checklist](./ml-model-checklist.md) reviewed.
+- [ ] Model readiness checklist reviewed.
 - [ ] Model reviews were performed (covering model debugging, reviews of training and evaluation approaches, model performance).
 - [ ] Data pipeline for inferencing, including an end-to-end tests.
 - [ ] SLAs requirements for models are gathered and documented.
