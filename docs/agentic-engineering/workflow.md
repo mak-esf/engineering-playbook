@@ -12,43 +12,123 @@ Agentic engineering follows a gated sequence. Each phase produces a verifiable a
 
 ### 1. Specify
 
-Turn the goal into a written specification before generating any code.
+Turn the goal into a written specification before generating any code. A vague prompt produces vague code — if requirements are ambiguous, the agent fills the vacuum with assumptions that lead to expensive downstream refactors.
 
-- Define user journeys and acceptance criteria
-- Describe technical constraints and out-of-scope items
-- Use Claude to expand a rough brief into a full spec, then refine it
+The output is a written spec — either a dedicated `SPEC.md` or a well-formed work item description. Use this minimal template:
 
-The output is a written spec — either a dedicated `SPEC.md` or a well-formed work item description. A vague prompt produces vague code; the specification is the primary lever of quality.
+```markdown
+## Commands
+<!-- Key build/test/run commands the agent will need -->
+
+## User Journeys
+<!-- Numbered list: Actor → Action → Outcome -->
+
+## Success Criteria
+<!-- Testable acceptance criteria, one per line -->
+
+## Technical Constraints
+<!-- Languages, frameworks, APIs, versions in use -->
+
+## Out of Scope
+<!-- Explicit list of what this spec does NOT cover -->
+
+## Boundaries
+<!-- Files or systems the agent must not touch -->
+```
+
+**Example user journey + acceptance criterion pair:**
+
+> **Journey:** A new user submits the registration form with a valid email and password.
+>
+> **Criterion:** `POST /auth/register` returns HTTP 201, stores a bcrypt-hashed password, and sends a confirmation email. It returns HTTP 422 if the email is already registered.
+
+Write at least one acceptance criterion per journey. If you can't write a testable criterion, the journey isn't specific enough yet.
 
 ### 2. Plan
 
-Use Claude Code's plan mode to explore the codebase and draft a technical approach without writing any code.
+Use Claude Code's plan mode to explore the codebase and draft a technical approach without writing any code. Invoke it with:
 
-- Review the proposed plan for architectural fit, security risks, and alignment with existing patterns
-- Identify data models, integration boundaries, and dependencies upfront
-- Catch logic flaws at the design stage, not after code has been written
+```sh
+# Start a session in plan mode (read-only, no code changes)
+claude --plan
+# Or, inside an existing session:
+/plan
+```
 
-Approve the plan before proceeding to implementation. This "waterfall in 15 minutes" approach lets you iterate on strategy without polluting the codebase with exploratory scaffolding.
+Before approving the plan, review it against this checklist:
+
+- [ ] Does it reuse existing patterns and utilities, or invent new ones unnecessarily?
+- [ ] Are integration boundaries (external APIs, database schemas) clearly identified?
+- [ ] Does it touch any **Never** boundaries defined in `CLAUDE.md`?
+- [ ] Are there security-sensitive paths (auth, input handling, permission checks)? If so, flag them explicitly before implementation begins.
+- [ ] Is the task sequence ordered smallest-to-largest to maximize early feedback?
+
+Approve the plan before proceeding. This "waterfall in 15 minutes" approach lets you iterate on strategy without polluting the codebase with exploratory scaffolding.
 
 ### 3. Implement
 
-Execute tasks in small, reviewable increments.
+Execute tasks in small, reviewable increments. The quality of your task prompt directly determines the quality of the output.
 
-- Break the plan into bite-sized tasks (e.g., "create the user registration endpoint with email validation")
-- Implement one task at a time; verify before moving to the next
-- Avoid monolithic prompts that generate hundreds of lines at once
+**Prompt quality matters — bad vs. good:**
 
-### 4. Verify
+| | Example |
+|--|--|
+| **Bad** | `"Build the user authentication system."` |
+| **Good** | `"Create a POST /auth/register endpoint. Validate email format (RFC 5322) and hash passwords with bcrypt (cost factor 12). Do not implement login yet. Run existing tests before and after."` |
 
-Prove the implementation is correct.
+The bad prompt leaves scope, security decisions, and sequencing entirely to the agent. The good prompt constrains all three.
 
-- Run automated tests and confirm the suite passes
-- Review the diff — every changed line — before merging
-- Perform a manual walkthrough of any user-facing changes
-- Consider a second review pass (or a second agent) to check for security anti-patterns
+**TDD loop — four steps per task:**
 
-!!! warning "The burden of proof"
-    If you have not confirmed the code does the right thing, it is not done. Code you *hope* works is not ready to merge.
+1. Ask Claude to write a failing test that expresses the acceptance criterion
+2. Review and approve the test before any implementation runs
+3. Ask Claude to implement until the test passes
+4. Review every line of the diff before moving to the next task
+
+**Kill criteria — when to abort and restart:**
+
+- Agent fails to fix the same bug in **3 consecutive attempts** → stop, start a new session with a more constrained prompt
+- Diff exceeds **~200 lines** on a single task → the task was too large; undo and decompose further
+- Agent **removes or skips a test** to make the suite pass → hard stop; reject and re-prompt with an explicit constraint against it
+
+### 4. Managing Context Drift
+
+In long sessions, agents "forget" earlier constraints. This is called context drift (or the "curse of instructions") — the agent re-implements something you already approved, ignores a boundary rule, or starts inventing new conventions.
+
+**Signs of drift:**
+
+- Agent repeats a decision you already made differently
+- A `CLAUDE.md` boundary rule is quietly violated
+- The code style shifts mid-session
+
+**How to recover:**
+
+- Re-anchor mid-session: `"Refer to CLAUDE.md and the spec before continuing."`
+- If drift is severe, start a new session — paste the spec, summarize decisions made so far, then continue
+- Update `CLAUDE.md` with decisions made mid-session so they survive a session restart
+
+### 5. Verify
+
+Prove the implementation is correct. The burden of proof rests entirely with you: if you haven't confirmed the code does the right thing, it is not done.
+
+**Diff review checklist — what to look for in AI-generated code:**
+
+- [ ] Hardcoded values that should be config (credentials, magic numbers, environment-specific URLs)
+- [ ] Missing input validation at system boundaries
+- [ ] Error cases silently swallowed (bare `except:`, empty `catch {}`)
+- [ ] Tests deleted or skipped to make the suite pass
+- [ ] New dependencies added without your explicit approval
+- [ ] Auth and permission checks on every data-mutating path
+
+**Two-agent review pattern:**
+
+After implementation, open a separate Claude session with no prior context. Paste in the diff and the acceptance criteria. Ask:
+
+> "Review this diff against the spec. Identify logic errors, missing edge cases, and security anti-patterns."
+
+This second session has no stake in the original implementation and catches what the first session rationalizes away.
+
+Research shows logic errors are 75% more common and XSS vulnerabilities occur at 2.74x higher frequency in AI-generated code versus human-written code — treat every diff as requiring active proof of correctness, not a passive scan.
 
 ---
 
@@ -56,16 +136,38 @@ Prove the implementation is correct.
 
 Every project should maintain a `CLAUDE.md` file at the repository root. Claude Code reads this automatically at the start of each session, anchoring agent behavior to your project's conventions and constraints.
 
-A well-structured `CLAUDE.md` includes:
+Here is a complete template to adapt:
 
-| Section | Purpose | Example |
-|---------|---------|---------|
-| **Commands** | Key commands for build, test, and run | `npm test`, `uv run pytest -v` |
-| **Project Structure** | Where source, tests, and docs live | `/src`, `/tests`, `/docs` |
-| **Tech Stack** | Languages, frameworks, and versions in use | React 18, TypeScript 5, Python 3.12 |
-| **Code Style** | A representative snippet or link to linting config | `.eslintrc`, `pyproject.toml` |
-| **Git Workflow** | Branch naming, commit format, PR requirements | `feature/<alias>/<title>` |
-| **Boundaries** | Files and directories agents must not modify | `vendor/`, `.env`, `migrations/` |
+```markdown
+## Commands
+- Build: `npm run build`
+- Test: `npm test -- --coverage`
+- Lint: `npm run lint`
+
+## Project Structure
+- `/src` — application source
+- `/tests` — unit and integration tests
+- `/docs` — documentation
+
+## Conventions
+- Branch: `feature/<alias>/<title>`
+- Commit format: conventional commits (`feat:`, `fix:`, `docs:`)
+- Functions: camelCase; files: kebab-case
+
+## Boundaries
+### Always
+- Run `npm test` before every commit
+- Add a test for every new function
+
+### Ask
+- Adding a third-party dependency
+- Modifying database schema files
+
+### Never
+- Modify files in `/vendor` or `/.env`
+- Remove a failing test without approval
+- Commit secrets or credentials
+```
 
 See [Claude Code](./claude-code.md) for more on configuring `CLAUDE.md` and sub-agent instructions.
 
@@ -73,11 +175,13 @@ See [Claude Code](./claude-code.md) for more on configuring `CLAUDE.md` and sub-
 
 ## Three-Tier Boundaries
 
-Define explicit rules for agent behavior in your `CLAUDE.md`. Three tiers:
+Define explicit rules for agent behavior in your `CLAUDE.md` using the template above. Three tiers:
 
 - **Always** — Actions the agent performs without asking: run tests before committing, follow the style guide, log errors to the monitoring system.
 - **Ask** — High-impact changes requiring your sign-off before proceeding: modifying database schemas, adding third-party dependencies, changing CI/CD pipelines.
 - **Never** — Hard stops: commit secrets, modify vendor directories, remove failing tests without approval.
+
+As an `Always` rule, define kill criteria: maximum retry count (e.g., 3 attempts on the same bug) and maximum diff size (e.g., ~200 lines per task). When either threshold is hit, the agent stops and you re-scope before continuing.
 
 Clear boundaries prevent the agent from making well-intentioned but harmful changes autonomously.
 
@@ -114,12 +218,12 @@ This prevents file-system conflicts and keeps context boundaries clean between s
 
 ## What AI Handles Well vs. Where You Own the Problem
 
-AI accelerates the first ~70% of any task — scaffolding, boilerplate, routine functions, and initial implementations. The remaining 30% requires engineering judgment:
+AI accelerates the first ~70% of any task — scaffolding, boilerplate, routine functions, and initial implementations. The remaining 30% requires engineering judgment that AI measurably struggles with (logic errors are 75% more common; XSS vulnerabilities occur at 2.74x higher frequency in AI-generated code):
 
 | AI handles well | You own this |
 |----------------|-------------|
 | Boilerplate and project setup | Business logic and edge cases |
-| Routine CRUD and standard patterns | Authentication and authorization |
+| Routine CRUD and standard patterns | Authentication flows, permission checks, role escalation paths |
 | CSS and UI layout iteration | Security-sensitive code paths |
 | Documentation drafts | Architectural consistency |
 | Test scaffolding | Threat modeling and risk assessment |
