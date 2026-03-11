@@ -22,24 +22,32 @@ theme:
     - navigation.indexes
 
 nav:
-  - About this Playbook: README.md
-  - About ESF Engineering: ESF-engineering.md
-  - Engineering Fundamentals Checklist: engineering-fundamentals-checklist.md
-  - Week One of a Project: week-one-of-a-project.md
-  - Agile & Ceremonies: agile-development/ceremonies.md
-  - Working Agreement: agile-development/team-agreements/working-agreement.md
-  - Pull Requests & Code Reviews: code-reviews/pull-requests.md
-  - Source Control: source-control/README.md
-  - CI/CD: CI-CD/continuous-integration.md
-  - Secrets Management: CI-CD/dev-sec-ops/secrets-management/README.md
-  - Testing: automated-testing/README.md
-  - Design & NFRs: design/design-patterns/non-functional-requirements-capture-guide.md
-  - Security: security/README.md
-  - Observability: observability/best-practices.md
-  - Privacy: non-functional-requirements/privacy/privacy-frameworks.md
-  - Developer Experience & AI Tools: developer-experience/copilots.md
-  - Responsible AI: ml-and-ai-projects/responsible-ai.md
-  - ML Fundamentals Checklist: ml-and-ai-projects/ml-fundamentals-checklist.md
+  - Getting Started:
+    - About this Playbook: README.md
+    - About ESF Engineering: ESF-engineering.md
+    - Engineering Fundamentals Checklist: engineering-fundamentals-checklist.md
+    - Week One of a Project: week-one-of-a-project.md
+  - Agile & Process:
+    - Agile & Ceremonies: agile-development/ceremonies.md
+    - Working Agreement: agile-development/team-agreements/working-agreement.md
+  - Engineering Practices:
+    - Pull Requests & Code Reviews: code-reviews/pull-requests.md
+    - Source Control: source-control/README.md
+    - CI/CD: CI-CD/continuous-integration.md
+    - Secrets Management: CI-CD/dev-sec-ops/secrets-management/README.md
+    - Testing: automated-testing/README.md
+    - Design & NFRs: design/design-patterns/non-functional-requirements-capture-guide.md
+  - Quality & Security:
+    - Security: security/README.md
+    - Observability: observability/best-practices.md
+    - Privacy: non-functional-requirements/privacy/privacy-frameworks.md
+  - Agentic Engineering:
+    - Workflow: agentic-engineering/workflow.md
+    - Claude Code: agentic-engineering/claude-code.md
+    - AI Use Policy: agentic-engineering/ai-use-policy.md
+  - AI & ML:
+    - Responsible AI: ml-and-ai-projects/responsible-ai.md
+    - ML Fundamentals Checklist: ml-and-ai-projects/ml-fundamentals-checklist.md
 
 plugins:
   - search
