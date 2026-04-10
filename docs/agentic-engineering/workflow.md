@@ -78,6 +78,17 @@ Execute tasks in small, reviewable increments. The quality of your task prompt d
 
 The bad prompt leaves scope, security decisions, and sequencing entirely to the agent. The good prompt constrains all three.
 
+**Prompting strategy reference:**
+
+| Strategy | When to use | Example |
+|----------|-------------|---------|
+| **Chain-of-thought** | Debugging, logic errors, non-obvious reasoning | `"Think step by step through why this test is failing before proposing a fix."` |
+| **Few-shot** | Consistent output format or style | `"Here are two existing functions that follow our pattern. Write a third one for X using the same structure."` |
+| **Role persona** | Security, architecture, or adversarial review | `"You are a senior security engineer reviewing this auth middleware. Identify attack vectors."` |
+| **Constraint-based** | Bounded implementation tasks | `"Implement in TypeScript only. Maximum 50 lines. No external dependencies beyond what's already in package.json."` |
+
+Combine strategies when needed — a persona prompt with explicit constraints is especially effective for security-sensitive tasks.
+
 **TDD loop — four steps per task:**
 
 1. Ask Claude to write a failing test that expresses the acceptance criterion
@@ -91,7 +102,29 @@ The bad prompt leaves scope, security decisions, and sequencing entirely to the 
 - Diff exceeds **~200 lines** on a single task → the task was too large; undo and decompose further
 - Agent **removes or skips a test** to make the suite pass → hard stop; reject and re-prompt with an explicit constraint against it
 
-### 4. Managing Context Drift
+### 4. Managing Context
+
+#### Proactive context engineering
+
+Think of the context window like RAM: what you load determines what the agent can reason about. Loading the right information upfront produces better, more consistent output — and reduces drift.
+
+**What to load at the start of a session:**
+
+- Relevant source files (not the whole repo — the specific files the task touches)
+- The spec or work item description
+- Schemas, API contracts, or type definitions that constrain the implementation
+- Representative examples of the output format you expect (a similar function, a passing test)
+- Any error messages or logs that describe the problem
+
+**What to evict (don't load):**
+
+- Files unrelated to the current task
+- Old conversation context from unrelated sessions
+- Generated output (build artifacts, `node_modules`, lock files)
+
+When using Claude Code, you can explicitly reference files with `@filename` in your prompt to load them into context at the moment they become relevant, rather than all at once.
+
+#### Recovering from context drift
 
 In long sessions, agents "forget" earlier constraints. This is called context drift (or the "curse of instructions") — the agent re-implements something you already approved, ignores a boundary rule, or starts inventing new conventions.
 
@@ -119,6 +152,18 @@ Prove the implementation is correct. The burden of proof rests entirely with you
 - [ ] Tests deleted or skipped to make the suite pass
 - [ ] New dependencies added without your explicit approval
 - [ ] Auth and permission checks on every data-mutating path
+
+**Security checklist for sensitive paths (auth, payments, input handling):**
+
+Apply this checklist in addition to the standard diff review when the code touches security-sensitive areas:
+
+- [ ] All user-supplied input is validated and sanitized before use
+- [ ] SQL queries use parameterized statements or an ORM — no string concatenation
+- [ ] Output rendered in HTML is escaped to prevent XSS
+- [ ] Secrets, tokens, and PII are not written to logs or included in client-side bundles
+- [ ] API keys and credentials are read from environment variables, not hardcoded
+- [ ] Every mutating endpoint (POST, PUT, PATCH, DELETE) checks auth and authorization
+- [ ] File uploads validate type and size; filenames are sanitized before use on the filesystem
 
 **Two-agent review pattern:**
 

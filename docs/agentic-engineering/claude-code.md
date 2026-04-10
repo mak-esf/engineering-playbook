@@ -60,27 +60,42 @@ This produces more considered output on design questions, security boundaries, a
 
 ### MCP Servers
 
-Model Context Protocol (MCP) servers extend Claude Code by connecting it to external tools and data sources. Some useful integrations:
+Model Context Protocol (MCP) is a standard interface for connecting AI agents to external tools and data sources — think of it as "USB-C for AI integrations." Instead of custom one-off integrations, MCP servers expose a structured API that Claude Code can call: read a GitHub issue, run a browser action, query a database, or call an internal service.
+
+**Concrete example — Playwright MCP for end-to-end tests:**
+
+The Playwright MCP server gives Claude Code a live browser it can control. Rather than writing E2E tests from static code, Claude can navigate your app, observe real DOM state, and generate test assertions against actual behavior.
+
+```json
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp"]
+    }
+  }
+}
+```
+
+Once configured, you can prompt: *"Open the registration flow in the browser, complete it with test data, and write a Playwright test that captures this path."*
+
+**Configuring MCP servers:**
+
+Add MCP server definitions to Claude Code's settings file at `~/.claude/settings.json`. For project-specific servers that your whole team should use, document the configuration in your `CLAUDE.md`:
+
+```markdown
+## MCP Servers
+- Playwright: browser automation for E2E test generation (see ~/.claude/settings.json)
+- GitHub: issue and PR management — requires GITHUB_PERSONAL_ACCESS_TOKEN
+```
+
+**Other useful integrations:**
 
 - **GitHub / Azure DevOps** — Read issues, create pull requests, and manage work items without leaving Claude Code
 - **Browser automation** — Give Claude "eyes" for verifying UI behavior in real time during implementation
 - **Custom APIs** — Expose internal services (e.g., the Azure Resource Manager or your project management API)
 
-Configure MCP servers in Claude Code's settings file (typically `~/.claude/settings.json`):
-
-```json
-{
-  "mcpServers": {
-    "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "<your-token>"
-      }
-    }
-  }
-}
-```
+A registry of available MCP servers is maintained at the [MCP Marketplace](https://modelcontextprotocol.io).
 
 ### Git Worktrees for Parallel Sessions
 

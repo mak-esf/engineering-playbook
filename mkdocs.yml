@@ -44,6 +44,7 @@ nav:
   - Agentic Engineering:
     - Workflow: agentic-engineering/workflow.md
     - Claude Code: agentic-engineering/claude-code.md
+    - Multi-Agent Orchestration: agentic-engineering/multi-agent.md
     - AI Use Policy: agentic-engineering/ai-use-policy.md
   - AI & ML:
     - Responsible AI: ml-and-ai-projects/responsible-ai.md
